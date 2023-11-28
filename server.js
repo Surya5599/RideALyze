@@ -193,7 +193,7 @@ const {
 const { get } = require('http')
 const { updateFHV } = require('./Analytics/incrementalDesign.js')
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 app.use(express.static('public'))
 app.use(express.json()); // to support JSON-encoded bodies
@@ -572,6 +572,5 @@ app.get('/deleteLatLon', (req, res) => {
     res.json(data);
 });
 
-const hostname = 'https://software-web-app.onrender.com/'; // replace 'your-desired-hostname' with the actual hostname
-app.listen(PORT, hostname, () => console.log(`Listening on ${hostname}:${PORT}`));
+app.listen(PORT, () => console.log(`Listening on Port:${PORT}`));
 
