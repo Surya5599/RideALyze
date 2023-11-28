@@ -4,7 +4,7 @@ $(document).ready(function () {
 
 function getQuarterCompare() {
 	$(".loader").show();
-	var url = "http://localhost:3000/quarterPopularity";
+	var url = "https://ride-a-lyze.onrender.com/quarterPopularity";
 	$.get(url, function (data) {
 		if (data) {
 			var dialPercent = data[3];

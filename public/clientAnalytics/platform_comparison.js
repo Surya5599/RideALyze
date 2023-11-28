@@ -3,7 +3,7 @@ function compareArtifact() {
     $('.comparisonHolder').html('<canvas id="comparisonChart"></canvas>');
     var startDate = $("#month1_selection").val()
     var endDate = $("#month2_selection").val()
-    var url = "http://localhost:3000/compare?startDate=" + startDate + "&endDate=" + endDate;
+    var url = "https://ride-a-lyze.onrender.com/compare?startDate=" + startDate + "&endDate=" + endDate;
     $("#switchGraph").hide();
     $(".loader").show();
     $.get(url, function (data) {

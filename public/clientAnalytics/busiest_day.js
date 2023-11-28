@@ -3,7 +3,7 @@ function daysArtifact() {
     var busyCity = $("#city_search").val()
     var busyAddress = $("#address_search").val()
     var busyStreet = $("#street_search").val()
-    var url = "http://localhost:3000/busiest?state=" + busyState + "&city=" + busyCity + "&address=" + busyAddress + "&street=" + busyStreet;
+    var url = "https://ride-a-lyze.onrender.com/busiest?state=" + busyState + "&city=" + busyCity + "&address=" + busyAddress + "&street=" + busyStreet;
     $.get(url, function (data) {
         if (data == "ErrorCode1") {
             showPopUp("Error: Your Entry Was Not Found In Our Database!");

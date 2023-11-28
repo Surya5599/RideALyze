@@ -1,5 +1,5 @@
 function timesArtifact() {
-    var url = "http://localhost:3000/timePopularity";
+    var url = "https://ride-a-lyze.onrender.com/timePopularity";
     $.get(url, function (data) {
         if (data == "ErrorCode1") {
             showPopUp("Error: Your Entry Was Not Found In Our Database!");

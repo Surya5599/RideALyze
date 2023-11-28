@@ -7,7 +7,7 @@ function showPopUp(text) {
 
 function populationSearch() {
     var searchTarget = $("#searchbar").val()
-        var url = "http://localhost:3000/population?search=" + searchTarget;
+        var url = "https://ride-a-lyze.onrender.com/population?search=" + searchTarget;
         $.get(url, function (data) {
                 var separatorIndex = data.indexOf("SEPARATOR");
                 var citiesInState = data.slice(0, separatorIndex);

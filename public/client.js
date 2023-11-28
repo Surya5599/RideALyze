@@ -30,7 +30,7 @@ function searchTableCreate() {
         sendKey = $("#searchBar").val();
         sendField = $("#data_selection").val();
         if (sendKey) {
-            var url = "http://localhost:3000/search?field=" + sendField + "&id=" + sendKey;
+            var url = "https://ride-a-lyze.onrender.com/search?field=" + sendField + "&id=" + sendKey;
             $.get(url, function (data) {
                 if (data.length == 0) {
                     $('#myTable_wrapper').hide();
@@ -116,7 +116,7 @@ function addData() {
     var extractedState = $("#state").val();
     var extractedCity = $("#city").val();
     var extractedAddress = $("#address").val();
-    var url = "http://localhost:3000/add?date=" + extractedDate + "&time=" + extractedTime + "&state=" + extractedState + "&city=" + extractedCity + "&address=" + extractedAddress;
+    var url = "https://ride-a-lyze.onrender.com/add?date=" + extractedDate + "&time=" + extractedTime + "&state=" + extractedState + "&city=" + extractedCity + "&address=" + extractedAddress;
     var tempArr = [];
     tempArr.push(extractedDate);
     tempArr.push(extractedTime);
@@ -165,7 +165,7 @@ function deleteData(row) {
     if (editing == false) {
         var tempData = extractRowData(row); //an array [date, time, state, city, address]
         //console.log("Deleting: ", tempData[0], tempData[1], tempData[2], tempData[3], tempData[4]);
-        var url = "http://localhost:3000/delete?date=" + tempData[0] + "&time=" + tempData[1] + "&state=" + tempData[2] + "&city=" + tempData[3] + "&address=" + tempData[4];
+        var url = "https://ride-a-lyze.onrender.com/delete?date=" + tempData[0] + "&time=" + tempData[1] + "&state=" + tempData[2] + "&city=" + tempData[3] + "&address=" + tempData[4];
         $.get(url, function (data) {
             var parent = document.getElementById('table');
             if (data == false) {
@@ -197,7 +197,7 @@ function editData(row) { //get which row, then after row is changed get what cha
             }
             editing = true;
         } else {
-            var url = "http://localhost:3000/edit?old=" + previousData;
+            var url = "https://ride-a-lyze.onrender.com/edit?old=" + previousData;
             $.get(url, function (data) {
                 var parent = document.getElementById('table');
                 if (data == false) {
@@ -214,7 +214,7 @@ function editData(row) { //get which row, then after row is changed get what cha
         //console.log("Old: ", previousData);
         //console.log("New: ", updatedData);
         getUniqueValues();
-        var url = "http://localhost:3000/edit?old=" + previousData + "&new=" + updatedData;
+        var url = "https://ride-a-lyze.onrender.com/edit?old=" + previousData + "&new=" + updatedData;
         $.get(url, function (data) {
             var parent = document.getElementById('table');
             if (data == false) {
