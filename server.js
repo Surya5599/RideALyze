@@ -572,5 +572,6 @@ app.get('/deleteLatLon', (req, res) => {
     res.json(data);
 });
 
-app.listen(PORT, () => console.log('Listening on port', PORT));
+const hostname = 'https://software-web-app.onrender.com/'; // replace 'your-desired-hostname' with the actual hostname
+app.listen(PORT, hostname, () => console.log(`Listening on ${hostname}:${PORT}`));
 
