@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Ride-A-Lyze</title>
+<link rel="icon" type="image/png" href="../css/favivon.png"/>
+        
+        <link rel="stylesheet" href="../css/styles.css">
+        <link rel="stylesheet" href="../css/artifact_styles.css">
+        </link>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"> </script>
+        <script src="../backup.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.6/Chart.bundle.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/timepicker.js/latest/timepicker.min.js"></script>
+        <link href="https://cdn.jsdelivr.net/timepicker.js/latest/timepicker.min.css" rel="stylesheet"/>
+        
+        <script src="../clientAnalytics/population.js"></script>
+    </head>
+    </head>
+    
+    <body>
+        <header class="main_header">
+            <nav class="nav main_nav">
+                <ul>
+					<li>
+						<a href="../index.html"> Home </a>
+					</li>
+					<li>
+						<div class="menu_dropdown">
+							<a class="menu">Search
+								<i class="fa fa-caret-down"></i>
+							</a>
+							<div class="menu_content">
+								<a href="../search/search.html">Dial7</a>
+								<a href="../search/map.html">Uber/Lyft</a>
+								<a href="../search/activeVehicle.html">Active Vehicles</a>
+							</div>
+						</div>
+					</li>
+                        <div class="menu_dropdown">
+                            <buton class="menu">Analyze
+                                <i class="fa fa-caret-down"></i>
+                            </buton>
+                            <div class="menu_content">
+                                <a href="population.html">Population</a>
+                                <a href="busiest_day.html">Busiest Day</a>
+                                <a href="platform_comparison.html">Platform Comparison</a>
+                                <a href="time_popularity.html">Traffic Time of Day</a>
+                                <a href="active_vehicles.html">Types of Active Vehicles</a>
+                                <a href="year_popularity.html">Increase/Decrease in Platforms</a>
+                              </div>
+                        </div> 
+                    </li>
+                    <li>
+                        <a onclick=saveBackup()>Backup Data </a>
+                    </li>
+                    <li>
+                        <a onclick=deleteBackup()>Delete Backup </a>
+                    </li>
+    
+                </ul>
+            </nav>
+            <div class="popup">
+                <a class="popuptext" id="myPopup">Notification Popup</a>
+            </div>
+        </header>
+
+        <header>
+            <div class="population_search">
+                <select name="search" id="searchbar">
+                    <option value="ny">New York</option>
+                    <option value="nj">New Jersey</option>
+                  </select>
+                <button id=population_submit onclick=populationSearch()>Go</button>
+               
+            </div>
+        </header>
+	<p style="text-align: center; font-size: 20px; font-family: Arial; padding-top: 15px;">
+        	The highest amount of calls per city in a given state for our Dial7 dataset.
+        </p>
+        <div id="mainContainer">
+            <div class="populationHolder">
+                <canvas id="populationChart"></canvas>
+            </div>
+    </div>
+    </body>
+
+</html>

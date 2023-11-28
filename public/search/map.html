@@ -1,0 +1,79 @@
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+	<title>Ride-A-Lyze</title>
+	<link rel="icon" type="image/png" href="../css/favivon.png"/>
+	<link rel="stylesheet" href="../css/styles.css">
+	<link rel="stylesheet" href="../css/mapPageStyle.css">
+	<link rel="stylesheet" href="https://js.arcgis.com/4.17/esri/themes/light/main.css">
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"> </script>
+	<script src="../backup.js"></script>
+	<script src="https://js.arcgis.com/4.17/"></script>
+	<script src="../clientAnalytics/mapControl.js"></script>
+</head>
+
+<body>
+	<header class="main_header">
+	<nav class="nav main_nav">
+		<ul>
+
+			<li>
+				<a href="../index.html"> Home </a>
+			</li>
+			<li>
+				<div class="menu_dropdown">
+					<a class="menu">Search
+						<i class="fa fa-caret-down"></i>
+					</a>
+					<div class="menu_content">
+						<a href="search.html">Dial7</a>
+						<a href="map.html">Uber/Lyft</a>
+						<a href="activeVehicle.html">Active Vehicles</a>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div class="menu_dropdown">
+					<a class="menu">Analyze
+						<i class="fa fa-caret-down"></i>
+					</a>
+					<div class="menu_content">
+						<a href="../analyze/population.html">Population</a>
+						<a href="../analyze/busiest_day.html">Busiest Day</a>
+						<a href="../analyze/platform_comparison.html">Platform Comparison</a>
+						<a href="../analyze/time_popularity.html">Traffic Time of Day</a>
+						<a href="../analyze/active_vehicles.html">Types of Active Vehicles</a>
+						<a href="../analyze/year_popularity.html">Increase/Decrease in Platforms</a>
+					</div>
+				</div>
+			</li>
+			<li>
+				<a onclick=saveBackup()>Backup Data </a>
+			</li>
+			<li>
+				<a onclick=deleteBackup()>Delete Backup </a>
+			</li>
+		</ul>
+	</nav>
+	</header>
+	<div class="map_search_bar">
+		<input type="Search" placeholder="Search" name="searchBar" id="searchBar">
+		<button id="submit">Go</button>
+		<div class="dropdown">
+			<form action="">
+				<label for="data_selection">Choose a dataset</label>
+				<select name="data_selection" id="data_selection">
+					<option value="Time">Time</option>
+					<option value="Date">Date</option>
+					<option value="Month">Month</option>
+				</select>
+			</form>
+		</div>
+	</div>
+  <div id="viewDiv"></div>
+
+</body>
+
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ride-A-Lyze</title>
+<link rel="icon" type="image/png" href="../css/favivon.png"/>
+    
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/artifact_styles.css">
+    </link>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"> </script>
+    <script src="../backup.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.6/Chart.bundle.min.js">
+    </script>
+    <script src="https://cdn.jsdelivr.net/timepicker.js/latest/timepicker.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/timepicker.js/latest/timepicker.min.css" rel="stylesheet" />
+
+    <script src="../clientAnalytics/active_vehicles.js"></script>
+</head>
+</head>
+
+<body>
+    <header class="main_header">
+        <nav class="nav main_nav">
+            <ul>
+                <li>
+                    <a href="../index.html"> Home </a>
+                </li>
+                <li>
+                    <div class="menu_dropdown">
+                        <a class="menu">Search
+                            <i class="fa fa-caret-down"></i>
+                        </a>
+                        <div class="menu_content">
+                            <a href="../search/search.html">Dial7</a>
+                            <a href="../search/map.html">Uber/Lyft</a>
+                            <a href="../search/activeVehicle.html">Active Vehicles</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="menu_dropdown">
+                        <buton class="menu">Analyze
+                            <i class="fa fa-caret-down"></i>
+                        </buton>
+                        <div class="menu_content">
+                            <a href="population.html">Population</a>
+                            <a href="busiest_day.html">Busiest Day</a>
+                            <a href="platform_comparison.html">Platform Comparison</a>
+                            <a href="time_popularity.html">Traffic Time of Day</a>
+							<a href="active_vehicles.html">Types of Active Vehicles</a>
+							<a href="year_popularity.html">Increase/Decrease in Platforms</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a onclick=saveBackup()>Backup Data </a>
+                </li>
+                <li>
+                    <a onclick=deleteBackup()>Delete Backup </a>
+                </li>
+
+            </ul>
+        </nav>
+        <div class="popup">
+            <a class="popuptext" id="myPopup">Notification Popup</a>
+        </div>
+    </header>
+
+    <div class="date_container">
+        <ul> <!---
+        <li>
+            <div class="start_date_menu">
+                <label for="start_date">Start Date</label>
+                <input type="date" id="start_date" name="start_date" min="2015-01-01" max="2015-02-28" value="2015-01-01">
+            </div>
+        </li>
+        <li>
+            <div class="end_date_menu">
+                <label for="end_start_date">End Date</label>
+                <input type="date" id="end_date" name="end_date" min="2015-01-01" max="2015-02-28" value="2015-01-01">
+            </div>
+        </li> --->
+	<p style="text-align: center; font-size: 20px; color: white; font-family: Arial; padding-top: 15px; padding-bottom: 15px;">
+		Compare the total number of active vehicles that Uber and other For-Hire-Vehicles have.
+	</p>
+        <li>
+            <button id="date_submit" onclick="activeVehicleArtifact()">Show Weekly Graph</button>
+        </li>
+    </ul>
+    </div>
+
+    <div id="mainContainer">
+        <!---->
+        <div class="activeVehicleHolder">
+            <canvas id="activeVehicleChart"></canvas>
+        </div>
+    </div>
+</body>

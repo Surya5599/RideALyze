@@ -1,0 +1,24 @@
+10/23/2020 11:09 AM
+
+*Added*
+Added functionality for street Name and year and MONTH!!!
+
+*To Do*
+Table to show needs a better design
+Process data is currently commented out
+Graph functionality needs certain rules, how many data to show, what type of data to show, need fix for search based on anything besides city
+Sprint 4
+
+
+bugs
+- load df on any page (done)
+- table change column 3 captial (fixed)
+- edit to save  (done)
+- if not search dont show  
+- backup all frames (done)
+- incremental  (WORKS)
+- center load (fixed)
+- lattitude and longitude wont show when adding new thing
+
+
+
