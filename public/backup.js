@@ -2,30 +2,33 @@ $(document).ready(function () {
 	backupCheck();
 	//console.log(" backup called")
 });
+
+var hostname = window.location.origin + "/"
+console.log(window.location.origin);
 function backupCheck() {
-	var url = "https://ride-a-lyze.onrender.com/checkBackup";
+	var url = hostname + "checkBackup";
 	$.get(url, function (data) {
 			if (data == true) {
 					var modal = document.getElementById("myModal");
 					modal.style.display = "block";
 					var span = document.getElementsByClassName("close")[0];
 					span.onclick = function () {
-							var url = "https://ride-a-lyze.onrender.com/noBackup";
+							var url = hostname + "noBackup";
 							$.get(url)
 							modal.style.display = "none";
 					}
 					$("#backupNo").click(function () {
-							var url = "https://ride-a-lyze.onrender.com/noBackup";
+							var url = hostname + "noBackup";
 							$.get(url);
 							modal.style.display = "none";
 					});
 					$("#backupYes").click(function () {
-							var url = "https://ride-a-lyze.onrender.com/getBackup";
+							var url = hostname + "getBackup";
 							$.get(url);
 							modal.style.display = "none";
 					});
 			} else {
-					var url = "https://ride-a-lyze.onrender.com/noBackup";
+					var url = hostname + "noBackup";
 					$.get(url);
 			}
 	});
@@ -33,7 +36,7 @@ function backupCheck() {
 
 function saveBackup() {
 	//console.log("SAVING");
-	var url = "https://ride-a-lyze.onrender.com/exportData";
+	var url = hostname + "exportData";
 	$.get(url, function (data) {
 			if (data == true) {
 					showPopUp("Backup Completed!");
@@ -45,7 +48,7 @@ function saveBackup() {
 
 function deleteBackup() {
 	//console.log("Deleting");
-	var url = "https://ride-a-lyze.onrender.com/deleteBackup";
+	var url = hostname + "deleteBackup";
 	$.get(url, function (data) {
 			if (data) {
 					showPopUp("Backup Data file deleted.");

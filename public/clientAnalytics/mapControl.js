@@ -101,7 +101,7 @@ require([
 		sendKey = $("#searchBar").val();
 		sendField = $("#data_selection").val();
 		if (sendKey) {
-			var url = "https://ride-a-lyze.onrender.com/searchLatLon?field=" + sendField + "&id=" + sendKey;
+			var url = hostname + "searchLatLon?field=" + sendField + "&id=" + sendKey;
 			$.get(url, function (info) {
 				layerPoint.destroy();
 				view.ui.remove(editor);
@@ -262,7 +262,7 @@ require([
 						var previousData = [previous.Date, previous.Time, previous.Latitude, previous.Longitude, previous.type]
 						//console.log("Delete", previousData);
 						
-						var url = "https://ride-a-lyze.onrender.com/deleteLatLon?data=" + previousData;
+						var url = hostname + "deleteLatLon?data=" + previousData;
 						$.get(url, function (data) {})
 						editor.viewModel.cancelWorkflow();
 					}
@@ -278,7 +278,7 @@ require([
 						});
 						view.popup.close();
 						var previousData = [addInfo.Date, addInfo.Time, addInfo.Latitude, addInfo.Longitude, addInfo.type]
-						var url = "https://ride-a-lyze.onrender.com/addLatLon?data=" + previousData;
+						var url = hostname + "addLatLon?data=" + previousData;
 						console.log(url);
 						$.get(url, function (data) {})
 						editor.viewModel.cancelWorkflow();
@@ -309,7 +309,7 @@ require([
 						//console.log("Old:", previousData);
 						//console.log("New:", updatedData);
 
-						var url = "https://ride-a-lyze.onrender.com/editLatLon?old=" + previousData + "&new=" + updatedData;
+						var url = hostname + "editLatLon?old=" + previousData + "&new=" + updatedData;
 						//console.log("updating");
 						$.get(url, function (data) {})
 						// Cancel the workflow so that once edits are applied, a new popup can be displayed

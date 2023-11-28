@@ -22,7 +22,7 @@ function searchTableCreate() {
 		sendField = evt.target.value;
 		window.type = sendField;
 		if (sendField) {
-			var url = "https://ride-a-lyze.onrender.com/searchActive?id=" + sendField;
+			var url = hostname + "searchActive?id=" + sendField;
 			$.get(url, function (data) {
 				if (data.length == 0) {
 					$("#addEntry").hide();
@@ -111,7 +111,7 @@ function editData(row) { //get which row, then after row is changed get what cha
 			}
 			editing = true;
 		} else {
-			var url = "https://ride-a-lyze.onrender.com/editActive?old=" + previousData;
+			var url = hostname + "editActive?old=" + previousData;
 			$.get(url, function (data) {
 				var parent = document.getElementById('table');
 				if (data == false) {
@@ -127,7 +127,7 @@ function editData(row) { //get which row, then after row is changed get what cha
 		var updatedData = extractRowData(row);
 		//console.log("Old: ", previousData);
 		//console.log("New: ", updatedData);
-		var url = "https://ride-a-lyze.onrender.com/editActive?old=" + previousData + "&new=" + updatedData + "&type=" + window.type;
+		var url = hostname + "editActive?old=" + previousData + "&new=" + updatedData + "&type=" + window.type;
 		$.get(url, function (data) {
 			var parent = document.getElementById('table');
 			if (data == false) {
@@ -165,7 +165,7 @@ function addData() {
 	extractedDate = date[1].replace(/^0+/, '') + '.' + date[2].replace(/^0+/, '') + '.' + date[0].replace(/^0+/, '');
 	var extractedVehicle = $("#activeVehicle").val();
 	var extractedTrips = $("#trips").val();
-	var url = "https://ride-a-lyze.onrender.com/addVehicle?date=" + extractedDate + "&activeVehicle=" + extractedVehicle + "&trips=" + extractedTrips + "&type=" + window.type;
+	var url = hostname + "addVehicle?date=" + extractedDate + "&activeVehicle=" + extractedVehicle + "&trips=" + extractedTrips + "&type=" + window.type;
 	$.get(url, function (data, tempArr) {
 
 		if (data == true) {
@@ -188,7 +188,7 @@ function deleteData(row) {
 	if (editing == false) {
 		var tempData = extractRowData(row); //an array [date, time, state, city, address]
 		//console.log("Deleting: ", tempData[0], tempData[1], tempData[2]);
-		var url = "https://ride-a-lyze.onrender.com/deleteActive?date=" + tempData[0] + "&activeVehicle=" + tempData[1] + "&trips=" + tempData[2] + "&type=" + window.type;
+		var url = hostname + "deleteActive?date=" + tempData[0] + "&activeVehicle=" + tempData[1] + "&trips=" + tempData[2] + "&type=" + window.type;
 		$.get(url, function (data) {
 			var parent = document.getElementById('table');
 			if (data == false) {

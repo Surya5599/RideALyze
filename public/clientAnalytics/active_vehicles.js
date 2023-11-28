@@ -1,5 +1,5 @@
 function activeVehicleArtifact() {
-    var url = "https://ride-a-lyze.onrender.com/activeVehicle";
+    var url = hostname + "activeVehicle";
     $.get(url, function (data) {
         if (data == "ErrorCode1") {
             showPopUp("Error: Your Entry Was Not Found In Our Database!");
