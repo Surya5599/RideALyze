@@ -22,7 +22,7 @@ RideALyze is a web application designed to analyze and visualize ride-hailing da
 
 ### Installation
 
-1. Clone the repository: `git clone https://github.com/your-username/RideALyze.git`
+1. Clone the repository: `git clone https://github.com/Surya5599/RideALyze.git`
 2. Navigate to the project directory: `cd RideALyze`
 3. Install dependencies: `npm install`
 4. Start the application: `node server.js`
